@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://www.deepiotics.com/blog/wp-content/uploads/2020/05/21.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            width: 40%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(23, 130, 208, 0.2);
+            text-align: center;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+    <script>
+        function previewResume() {
+            const fileInput = document.getElementById('resume');
+            const previewText = document.getElementById('resume-preview');
+            const previewLink = document.getElementById('resume-link');
+            
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const objectURL = URL.createObjectURL(file);
+                previewText.style.display = 'block';
+                previewText.textContent = 'Selected file: ' + file.name;
+                previewLink.href = objectURL;
+                previewLink.style.display = 'inline';
+                previewLink.textContent = "View Attached File";
+            } else {
+                previewText.style.display = 'none';
+                previewLink.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="image/th.jpeg">
+            <a href="#">Portfolio</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a class="selected" href="works.html">Works</a>
+            <a href="single-work.html">Single Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form action="https://api.web3forms.com/submit" method="POST" 
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <input type="hidden" name="access_key" value="df5044c2-5d91-40e8-9621-a11be1c4f26d">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+            
+            <label for="qualification">Qualification:</label>
+            <input type="text" id="qualification" name="qualification" required>
+            
+            <label for="resume">File:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required onchange="previewResume()">
+            <p id="resume-preview"></p>
+            <a id="resume-link" href="#" target="_blank"></a>
+            <p style="white-space: pre-line;"></p>
+
+            
+            <a id="resume-link" href="#" target="_blank"></a>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit" onceclick="sendmail()">Send Message</button>
+            
+        </form>
+   
+
+    <footer>
+        <div class="socials">
+            <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            <a href="https://www.instagram.com/devesh.200?igsh=Z2F0dGM1M3VjbWIy" target="_blank"><i class='bx bxl-instagram'></i></a>
+            <a href="mailto:siddhathsahu920@gmail.com"><i class='bx bxl-gmail'></i></a>
+            <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.linkedin.com/in/siddharth266" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+        </div>
+    </footer>
+</body>
+</html>
